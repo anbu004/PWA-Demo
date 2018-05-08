@@ -1,0 +1,563 @@
+<br>
+<br>
+<div class="container">
+    <h1>8uuu</h1>
+<div class="row">
+<!-- <h3 class="text-center" style="color:#f60;">SFCS</h3> -->
+  <div class="col-md-12  col-lg-12 col-sm-12 col-xs-12">
+
+      <div class="">
+          <!-- <div class="panel-heading" style="border-color: #337ab7 !important;"><b>Create Children</b></div> -->
+          <div class="panel-body">
+            <form  (ngSubmit)="onSubmit(indexVal)">
+              <!-- <div class="form-group">
+                  <label for="name">First Name</label>
+                  <input type="text" class="form-control"  id="firstName"
+                         required
+                         [(ngModel)]="firstName" name="firstName">
+                </div>
+                
+                <div class="form-group">
+                  <label for="alterEgo">Last Name</label>
+                  <input type="text"  class="form-control" id="lastName"
+                         [(ngModel)]="lastName" name="lastName">
+                </div>
+                
+                <div class="form-group">
+                  <label for="power">Gender</label>
+                  <select class="form-control" id="gender"
+                          required
+                          [(ngModel)]="gender" name="gender">
+                    <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="alterEgo">Place</label>
+                  <input type="text"  class="form-control" id="place"
+                         [(ngModel)]="place" name="place">
+                </div> -->
+
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Case Manager Information</div>
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+          
+                              <div class="form-group">
+                                      <label class="required">Case Manager Email Adress</label>
+                                      <input type="email" class="form-control" id='txtEmail' placeholder="Email Adress" [(ngModel)]="m_email" name="m_email">
+                                      <div id ="m_email" class="valid"></div>
+                                  </div>
+                            
+                              <div class="form-group">
+                                <label class="required">Phone Number</label>
+                                <input type="number" class="form-control" id="pwd"  [(ngModel)]="m_phone" placeholder="Phone Number" name="m_phone">
+                                <div id ="m_phone"class="valid"></div>
+                              </div> 
+                        </div>
+                        <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                      <label class="required">Full Name</label>
+                                      <input type="text" class="form-control" id="email" [(ngModel)]="m_name" placeholder="Full Name" name="m_name">
+                                      <div id ="m_name"class="valid"></div>  
+                                  </div>
+                            <div class="form-group">
+                                    <label class="required">Your Institution’s Name</label>
+                                  <input type="text"class="form-control" placeholder="Your Institution’s Name" [(ngModel)]="m_istitute" name="m_istitute"/>
+                                
+                                  <div id ="m_istitute"class="valid"></div>
+                              </div>
+                        </div>
+                            </div></div>
+                  </div>
+                  <div class="panel panel-primary ">
+                      <div class="panel-heading">Child Information</div>
+                      <div class="panel-body">
+          
+          <div class="row">
+              <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                  <div class="form-group">
+                      <label class="required">First Name</label>
+                      <input type="text" class="form-control" id="email" [(ngModel)]="f_name"  placeholder="First Name" name="f_name">
+                      <div id ="f_name"class="valid"></div>
+                    </div>
+                </div>
+          
+              <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                  <div class="form-group">
+                      <label class="required">Last Name</label>
+                      <input type="text" class="form-control" id="pwd" [(ngModel)]="l_name" placeholder="Last Name" name="l_name">
+                      <div id ="l_name"class="valid"></div>  
+                  </div>
+                </div>
+          </div>
+          
+          <div class="row">
+              <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                  <div class="form-group">
+                      <label class="required">Email Adress</label>
+                      <input type="email" class="form-control" id="pwd" [(ngModel)]="e_address" placeholder="Email Adress" name="e_address">
+                      <div id ="e_address"class="valid"></div>  
+                  </div>
+                </div>
+          
+              <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                  <div class="form-group">
+                      <label class="required">DOB</label>
+                    <input id="datepicker"type="text"class="form-control"name="c_birth_date" [(ngModel)]="c_birth_date" placeholder="MM/DD/YYYY"/>
+                    <div id ="c_birth_date"class="valid"></div> 
+                  </div>
+                </div>
+          </div>
+                          <div class="row">
+                      <div class="col-md-12">
+                            <label class="required">Gender</label>
+                              <div class="form-group">
+                                      <label for="gender-male" class="radio-inline"> 
+                                         <input type="radio" name="child_gender" value="Male"[(ngModel)]="child_gender" id="gender-male"/>Male</label>
+                                            <label for="gender-female" class="radio-inline"> <input type="radio" [(ngModel)]="child_gender"name="child_gender" value="Female" id="gender-female"/>Female</label>
+                                      <label  class="radio-inline" class="radio-inline"><input type="radio" name="child_gender" [(ngModel)]="child_gender"value="Undefined" id="gender-undefined"/>Undefined</label>
+                                      <div id ="child_gender"class="valid"></div> 
+                              </div>  </div></div>
+                              <div class="row">
+                                  <div class="col-md-7">
+                              <label class="required">Ethnicity</label>
+                              <div class="form-group">
+                                <label class="radio-inline"> 
+                                   <input type="radio"name="child_ethincity"[(ngModel)]="child_ethincity"  value="Asian"/>Asian</label>
+                                <label class="radio-inline"> <input type="radio"name="child_ethincity" [(ngModel)]="child_ethincity" value="White"/>White</label>
+                                <label  class="radio-inline"> <input type="radio"name="child_ethincity"  [(ngModel)]="child_ethincity" value="Black_African_American"/>Black or African American</label>
+                                <label  class="radio-inline"><input type="radio"name="child_ethincity" [(ngModel)]="child_ethincity"value="Pacific_Islander"/>Pacific Islander</label>
+                                <label  class="radio-inline"> <input type="radio"name="child_ethincity" [(ngModel)]="child_ethincity" value="American_Indian"/>American Indian</label>
+                                <label  class="radio-inline"> <input type="radio"name="child_ethincity" [(ngModel)]="child_ethincity"  value="Hispanic_or_Latino"/>Hispanic or Latino</label>
+                                <label  class="radio-inline"> <input type="radio"name="child_ethincity" [(ngModel)]="child_ethincity" value="Some_other_race"/>Some other race</label>
+                                <label  class="radio-inline"><input type="radio"name="child_ethincity" [(ngModel)]="child_ethincity"value="dontknow"/>I do not know (mutually exclusive)</label>
+                              </div>
+                              <div id ="child_ethincity"class="valid"></div> 
+                      </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                  <label class="required">Facebook Username</label>
+                                  <!-- id="dynamicInput" -->
+                                  <div class="row">
+          <div class="col-md-11">
+                  <input type="text" class="form-control" name="fa_name"[(ngModel)]="fa_name" placeholder="Facebook Username">
+                  <div id ="fa_name"class="valid"></div> 
+          </div>
+          <div class="col-md-1">
+                  <button type="button" class="btn btn-primary btn-xs fa fa-plus"onClick="addInput('dynamicInput');"></button>
+              </div>
+          
+                                  </div>
+                               
+                              </div>
+                            </div>
+                      
+                          <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                  <label class="required">Instagram Username</label>
+                                <input type="text"class="form-control" name="in_name" id="datepicker"[(ngModel)]="in_name" placeholder="Instagram Username"/>
+                                <div id ="in_name"class="valid"></div> 
+                              </div>
+                            </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                  <label class="required">Snapchat Username</label>
+                                  <input type="text" class="form-control" id="pwd" [(ngModel)]="sn_name" placeholder="Snapchat Username" name="sn_name">
+                                  <div id ="sn_name"class="valid"></div> 
+                              </div>
+                            </div>
+                    </div>
+                    <!-- <div class="row">
+                          <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                              <div class="form-group">
+                                  <label class="required">Child Image</label>
+                                  <input type='file'class="form-control" id="inputFile" />
+                      
+                              </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                                  <img id="image_upload_preview"height="100" width="100" src="http://placehold.it/100x100" alt="your image" />
+                            </div>
+                    </div> -->
+          
+                    
+                  
+                  </div></div>
+                  <div class="panel panel-primary ">
+                      <div class="panel-heading">Child Run Away</div>
+                      <div class="panel-body">
+                          <div class="row">
+        
+                                <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                                        <label class="required">Does the child have a Gang Affiliations?</label>
+                                        <div class="form-group">
+                                                <label for="gender-male" class="radio-inline"> 
+                                                   <input type="radio" name="is_child_gang" [(ngModel)]="is_child_gang" value="yes" id="gender-male"/>Yes</label>
+                                                      <label for="gender-female" class="radio-inline">
+                                                           <input type="radio" name="is_child_gang"[(ngModel)]="is_child_gang" value="no" id="gender-female"/>No</label>
+                                                <label  class="radio-inline" class="radio-inline"><input type="radio" name="dont"[(ngModel)]="is_child_gang" value="undefined" id="gender-undefined"/>I do not know</label>
+                                        </div>
+                                        <div id ="is_child_gang"class="valid"></div>  
+                                      </div>
+        
+        
+                             
+                          
+                              <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                                  <label class="required">Is the child a</label>
+                                  <div class="form-group">
+                                      <label for="gender-male" class="radio-inline"> 
+                                         <input type="radio" name="is_runaway" [(ngModel)]="is_runaway" value="runway" />Runway Child</label>
+                                            <label for="gender-female" class="radio-inline">
+                                                 <input type="radio" name="is_runaway"[(ngModel)]="is_runaway" value="exparte"/>Exparte Child</label>
+                              </div> 
+                              <div id ="is_child_gang"class="valid"></div> 
+                                </div>
+                          </div>
+                          
+                          <div class="row">
+                                <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                                        <label class="required">Does the child have any disabilities?</label>
+                                        <div class="form-group">
+                                            <label for="gender-male" class="radio-inline"> 
+                                                <input type="radio" name="is_child_dis" [(ngModel)]="is_child_dis" value="yes"/>Yes</label>
+                                                   <label for="gender-female" class="radio-inline"> 
+                                                       <input type="radio" name="is_child_dis" value="no" [(ngModel)]="is_child_dis" id="gender-female"/>No</label>
+                                             <label  class="radio-inline" class="radio-inline">
+                                                 <input type="radio" name="is_child_dis"  value="dont"[(ngModel)]="is_child_dis" id="gender-undefined"/>I do not know</label>
+                                                 <div id ="is_child_dis"class="valid"></div> 
+                                                </div> 
+                                      </div>
+                                <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                                    <label class="required">Do you have any concerns that the child may be in any way involved in human sex trafficking or prostitution?</label>
+                                    <div class="form-group">
+                                        <label for="gender-male" class="radio-inline"> 
+                                            <input type="radio" name="is_child_harr"[(ngModel)]="is_child_harr"  value="yes"/>Yes</label>
+                                               <label for="gender-female" class="radio-inline"> <input type="radio" [(ngModel)]="is_child_harr"name="is_child_harr" value="no" />No</label>
+                                         <label  class="radio-inline" class="radio-inline"><input type="radio" name="is_child_harr"  [(ngModel)]="is_child_harr" value="dont"/>I do not know</label>
+                                    </div> 
+                                  </div>
+                              </div>
+                              <div class="row">
+        
+                                    <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                                            <label class="required">Has the child been reported to the NCMEC (not the NCIC)</label>
+                                            <div class="form-group">
+                                                <label for="gender-male" class="radio-inline"> 
+                                                    <input type="radio" name="child_ncme" [(ngModel)]="child_ncme" value="Yes" id="gender-male"/>Yes</label>
+                                                       <label for="gender-female" class="radio-inline"> <input type="radio" name="child_ncme" value="No" id="gender-female"/>No</label>
+                                                 <label  class="radio-inline" class="radio-inline"><input type="radio" name="child_ncme" value="I do not know" id="gender-undefined"/>I do not know</label>
+                                            </div> 
+                                          </div>
+        
+                                   
+                                
+                                    <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label class="required">What is the specific length of stay at prior home in number of weeks</label>
+                                            <input type="number" class="form-control" id="pwd" [(ngModel)]="c_len_stay" placeholder="What is the specific length of stay at prior home in number of weeks"name="c_len_stay" >
+                                            <div id ="c_len_stay"class="valid"></div> 
+                                        </div>
+                                      </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="required">Street</label>
+                                                <input type="text" class="form-control" id="email" [(ngModel)]="c_r_street" placeholder="Street"  name="c_r_street">
+                                                <div id ="c_r_street"class="valid"></div>
+                                              </div>
+                                          </div>
+                                    
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="required">Address</label>
+                                                <input type="text" class="form-control" id="pwd" [(ngModel)]="c_r_address" placeholder="Address"name="c_r_address">
+                                                <div id ="c_r_address"class="valid"></div>
+                                              </div>
+                                          </div>
+                                          <div class="col-md-4">
+                                              <div class="form-group">
+                                                  <label class="required">City</label>
+                                                  <input type="text" class="form-control" id="pwd" [(ngModel)]="c_r_city" placeholder="City" name="c_r_city">
+                                                  <div id ="c_r_city"class="valid"></div>
+                                              </div>
+                                            </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="required">Country</label>
+                                                <input type="text" class="form-control" id="pwd" [(ngModel)]="c_r_country" placeholder="City" name="c_r_country">
+                                                <div id ="c_r_country"class="valid"></div>
+                                            </div>
+                                          </div>
+                                    
+                                        <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="required">Zip</label>
+                                              <input type="number"class="form-control" name="c_r_zip"  [(ngModel)]="c_r_zip" placeholder="Zip"/>
+                                              <div id ="c_r_zip"class="valid"></div>
+                                            </div>
+                                          </div>
+        
+                                    </div>
+                              <div class="row">
+                                    <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="required">Date of when child ran away from provider</label>
+                                                <input id="datepicker"type="text" class="form-control" id="pwd" [(ngModel)]="c_runaway_date" placeholder="MM/DD/YYYY" name="c_runaway_date">
+                                                <div id ="c_runaway_date"class="valid"></div>
+                                            </div>
+                                          </div>
+        
+                                          <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <label class="required">What is the specific Police Report Number for the child</label>
+                                                    <input type="number" class="form-control" id="pwd" [(ngModel)]="c_police_report_no" placeholder="What is the specific Police Report Number for the child" name="c_police_report_no">
+                                                    <div id ="c_police_report_no"class="valid"></div>
+                                                </div>
+                                              </div>
+        
+                                    </div>
+                                  
+                                    
+        
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="required">Who is the law enforcement contact and agency</label>
+                                                <input type="text" class="form-control" id="pwd" [(ngModel)]="c_contact_agency" placeholder="Who is the law enforcement contact and agency" name="c_contact_agency">
+                                                <div id ="c_contact_agency"class="valid"></div>
+                                            </div>
+                                          </div>
+                                    
+                                        <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="required">What are the child’s medical issues, if any</label>
+                                                <input type="text" class="form-control" id="pwd" [(ngModel)]="c_medical_issue" placeholder="What is the specific length of stay at prior home in number of weeks" name="c_medical_issue">
+                                                <div id ="c_medical_issue"class="valid"></div>
+                                            </div>
+                                          </div>
+                                    </div>
+        
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="required">What is the list of the child’s medications, if any</label>
+                                                <input type="text" class="form-control" id="pwd" name="child_medical" [(ngModel)]="child_medical" placeholder="What is the list of the child’s medications, if any">
+                                                <div id ="child_medical"class="valid"></div>
+                                            </div>
+                                          </div>
+                                    
+                                        <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="required">What are the child’s emotional and mental problems, if any</label>
+                                                <input type="text" class="form-control" id="pwd" [(ngModel)]="c_mental_issue" placeholder="What are the child’s emotional and mental problems, if any" name="c_mental_issue">
+                                                <div id ="c_mental_issue"class="valid"></div>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="row">
+                                       
+        
+                                            <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label class="required">How many times has this child ran away</label>
+                                                        <input type="number" class="form-control" id="pwd" [(ngModel)]="c_run_count" placeholder="How many times has this child ran away"name="c_run_count">
+                                                        <div id ="c_run_count"class="valid"></div>
+                                                    </div>
+                                                  </div>
+        
+                                          <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                                              <div class="form-group">
+                                                  <label class="required">Please provide DCF any advice, leads, or information on how we might be able to find the runway child</label>
+                                                  <input type="text" class="form-control" id="pwd" [(ngModel)]="c_advice" placeholder="Please provide DCF any advice, leads, or information" name="c_advice">
+                                                  <div id ="c_advice"class="valid"></div>
+                                                </div>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                                <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label class="required">Exact last known location of runaway child, please provide the exact address using this field: [ADDRESS LOOKUP API WITH LONG/LAT LOOKUP FEATURES]</label>
+                                                        <input type="text" class="form-control" id="pwd" [(ngModel)]="c_run_child" placeholder="Exact last known location of runaway child" name="c_run_child">
+                                                        <div id ="c_run_child"class="valid"></div>
+                                                    </div>
+                                                  </div>
+                                            
+                                               
+                                            <div class="col-md-6 col-lg-6  col-sm-6 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label class="required">Complete and thorough description of how the child became missing. Please provide exact details of circumstances (such ran away with a friend, etc.)</label>
+                                                        <textarea class="form-control rounded-0"[(ngModel)]="c_miss_reason" name="c_miss_reason" id="exampleFormControlTextarea2" rows="3"></textarea>
+                                                        <div id ="c_miss_reason"class="valid"></div>
+                                                    </div>
+                                                  </div>
+                                            </div>
+                                         
+                                  </div>
+                                 
+                        </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+          
+            </form></div>
+        </div>
+
+    
+  </div></div>
+  <div class="row">
+    <div class="col-md-12  col-lg-12 col-sm-12 col-xs-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><b>Childrens of List</b></div>
+            <div class="panel-body table-responsive" >
+
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>Phone Number</th>
+                        <th>DOB</th>
+                        <th>Ethnicity</th>
+                        <th>Facebook </th>
+                        <th>Instagram </th>
+                        <th>Snapchat </th>
+                        <th>Street</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>Country</th>
+                        <th>Zip</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody class="alternate" *ngFor="let data of getData; let i = index">
+                      <tr >
+                        <td>{{data.f_name}}</td> 
+                        <td>{{data.l_name}}</td>
+                        <td>{{data.m_email}}</td>
+                        <td>{{data.child_gender}}</td>
+                        <td>{{data.m_phone}}</td> 
+                        <td>{{data.c_birth_date}}</td>
+                        <td>{{data.child_ethincity}}</td>
+                        <td>{{data.fa_name}}</td>
+                        <td>{{data.in_name}}</td> 
+                        <td>{{data.sn_name}}</td>
+                        <td>{{data.c_r_street}}</td>
+                        <td>{{data.c_r_city}}</td>
+                        <td>{{data.c_r_country}}</td>
+                        <td>{{data.c_r_zip}}</td>
+                        <td> <button type="button" class="btn btn-primary btn-xs fa fa-edit"></button>&nbsp;&nbsp;<button type="button" class="btn btn-default btn-xs fa fa-close"></button></td>
+                        <!-- <td><button  class="btn-warning btn-xs" (click)="editData(data,i)"><span class="glyphicon glyphicon-pencil"></span></button>&nbsp;&nbsp;&nbsp;<button  class="btn-danger btn-xs" (click)="dataDelete(i)"><span class="glyphicon glyphicon-trash"></span></button></td> -->
+                      </tr>
+                    </tbody>
+                  </table>
+<br>
+                  <!-- <h5  *ngIf="getData.length == 0" class="text-center">   <b>No data found </b>  </h5> -->
+              
+                </div>
+          </div>
+      
+     
+        <span >
+                  
+                   </span>
+                 
+    </div>
+    
+</div>
+</div>
+  <style>
+  label {
+    font-weight: 500;
+    font-size: 14px !important;
+}
+table{
+  font-weight: 500;
+    font-size: 14px !important;
+}
+
+.table-scroll {
+	position: relative;
+	max-width: 1280px;
+	width:100%;
+	margin: auto;
+}
+.table-wrap {
+	width: 100%;
+	display:block;
+	height: 313px;
+	overflow: auto;
+	position:relative;
+	z-index:1;
+}
+.table-scroll table {
+	width: 100%;
+	margin: auto;
+	border-spacing: 0;
+}
+.table-scroll th, .table-scroll td {
+	padding: 5px 10px;
+	background: #fff;
+	vertical-align: top;
+}
+
+.faux-table table + table thead {
+	visibility: hidden;
+	border-color: transparent;
+}
+
+.faux-table {
+  position: absolute;
+    top: 15px;
+    right: 76px;
+    left: 15px;
+    bottom: 0px;
+}
+.faux-table thead, .faux-table tfoot, .faux-table thead th, .faux-table tfoot th, .faux-table tfoot td {
+	position:relative;
+	z-index:2;
+}
+.alternate tr:nth-child(2n) {
+  background-color: #83a8c7 !important;
+  color:#fff;
+}
+
+.alternate tr:nth-child(2n):hover, .alternate tr:hover {
+  background-color: #83a8c7 !important;
+  color:#fff;
+}
+
+.alternate tr {
+  background-color: white  !important;
+}
+.table-bordered th{border: none !important;
+
+}
+.form-control {
+    border: 1px solid #83a8c7 !important;
+}
+.table-bordered {
+    border: 1px solid #83a8c7 !important;
+}
+.table-bordered>tbody>tr>td {
+  border: 1px solid #83a8c7 !important;
+  border-left: none !important;
+  border-bottom: none !important;
+  border-right: none !important;
+}
+.btn-xs{padding:1px 5px;font-size:12px;line-height:1.5;border-radius:3px;height: 1.3rem;}
+  </style>
+  <script>
+
+</script>
